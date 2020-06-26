@@ -273,8 +273,93 @@ for value in bright_color_2:
     print(f"\t{value}")
 
 
+#   Photo Filter 4-7: Hex Components
+#   The advantage of representing colors in the hexadecimal format is that each
+#   color can be represented by a single six-character string, or seven with a #
+#   symbol. The disadvantage is that you have to do some work to pull out the
+#   component values if you want to work with them individually.
+
+#   A string is really a list of characters, so slice notation works on strings
+#   just like it does on lists. 
+
+#   Pick a color you like, and assign it to a variable as a hexadecimal string.
+#   Using slices, print the red, green, and blue components of the color.
+
+hexadecimal_color = '#eb3483'
+
+#   Photo Filter 5-1: Clipped Reds
+#   Every component of a color has a maximum value. In a 0-255 representation,
+#   this is 255. Values greater than 255 may be rendered as if they were 255, or
+#   they may cause an error, depending on how the image processing software was
+#   written. It’s a good idea to manage component values yourself, so you are
+#   handling out-of-bounds values in exactly the way that you want.
+
+#   Start with Challenge 4-4, Bumped Reds. Modify your code in a way that if the
+#   new red component has a value greater than the maximum legal value, it is
+#   reset to match the maximum value. For example if the original red value is
+#   245 and you multiply by 1.1, you would get 269.5. This is beyond the 255
+#   maximum, so the red value should be set to 255.
+
+#   Print your original color, and your modified color. Make sure you start with
+#   a color that tests your error-checking code, such as [254, 200, 200].
 
 
+initial_color = [254, 255, 100]
 
+new_color = initial_color[:]
+
+if new_color[0]*3 > 255:
+    new_color[0] = 255
+else:
+    new_color[0] = new_color[0]*3
+
+
+print("\nHere is my initial color:")
+for value in initial_color:
+    print(f"\t{value}")
+
+
+print("\nHere is my new color with a red value brightened by a factor of 3:")
+for value in new_color:
+    print(f"\t{value}")
+
+
+#   Photo Filter 5-2: Bounds Checking
+#   Store component values in a list, but make sure one or two of the component
+#   values are larger than they should be. For example, store a value greater
+#   than 255 if you’re using the 0-255 model, or greater than 1 if you’re using
+#   the 0-1 model.
+
+#   Create a new, empty list called new_color. Loop through the components of
+#   your original color, and add each component to new_color. However, if any
+#   component is too high, store the maximum legal value for that component
+#   instead of the original value.
+
+#   Print the original color, and the new color.
+
+boundcheck_color = [300, 100, 900]
+print("\nHere is my original color:")
+for value in boundcheck_color:
+    print(f"\t{value}")
+
+new_color = []
+
+for value in boundcheck_color:
+    if value > 255:
+        new_color.append(255)
+    else:
+        new_color.append(value)
+
+print("\nHere is my new color:")
+for value in new_color:
+    print(f"\t{value}")
+
+#   As a list comprehension: 
+
+new_color_list_comprehension = [value if value < 255 else 255 for value in boundcheck_color]
+
+print("\nHere is my new color from the list comprehension:")
+for value in new_color_list_comprehension:
+    print(f"\t{value}")
 
 
