@@ -155,6 +155,7 @@ for value in modified_color:
     print(f"\t{value}")
 
 
+
 #   Photo Filter 4-3: Grays
 #   In digital color models, shades of gray are colors where the RGB component
 #   values are all equal. When converting a non-gray color to a shade of gray,
@@ -164,17 +165,116 @@ for value in modified_color:
 #   Start with a color you like, and store its component values in a list. Make
 #   the following new colors, based on your original color:
 
+starting_color = [12, 159, 196]
+
+print("\nHere is my starting color:")
+for value in starting_color:
+    print(f"\t{value}")
+
 #   avg_gray: Find the average of the three RGB values, and use this value for
 #   all three RGB values of the new color.
+
+modified_starting_color = [] 
+for value in starting_color: 
+    average_starting_color = sum(starting_color)/len(starting_color)
+    modified_starting_color.append(average_starting_color)
+
+print("\nHere is my modified starting color (1), based on the average:")
+for value in modified_starting_color:
+    print(f"\t{value}")
+
+# With a list comprehension 
+mdc_two = [sum(starting_color)/len(starting_color) for value in range(3)]
 
 
 #   max_gray: Find the maximum of the three RGB values, and use this value for
 #   all three RGB values of the new color.
 
+modified_starting_color_2 = [max(starting_color) for value in range(3)]
+print("\nHere is my modified starting color (2), based on the maximum:")
+for value in modified_starting_color_2:
+    print(f"\t{value}")
+
 #   min_gray: Find the minimum of the three RGB values, and use this value for
 #   all three RGB values of the new color.
+
+modified_starting_color_3 = [min(starting_color) for value in range(3)]
+print("\nHere is my modified starting color (3), based on the minimum:")
+for value in modified_starting_color_3:
+    print(f"\t{value}")
 
 #   r_gray: Use the red component of the original color as the value for all
 #   three RGB values of the new color.
 
+modified_starting_color_3 = [starting_color[0] for value in range(3)]
+print("\nHere is my modified starting color (4), based on the red component:")
+for value in modified_starting_color_3:
+    print(f"\t{value}")
+
 #   Print your original color, and each shade of gray based on that color.
+
+#   Photo Filter 4-4: Bumped Reds
+#   Let’s say we wanted to brighten only the red values in an image. We could do
+#   this by adding a certain amount to the red component, or multiplying the red
+#   component by a value greater than one. Start with a color you like. Make a
+#   new color by increasing the value of the red component by a set amount. Make
+#   a second new color by multiplying the value of the red component by a value
+#   such as 1.1. Print your original color, and your two new colors. 
+
+
+initial_color = [12, 50, 100]
+
+new_color = initial_color[:]
+    
+new_color[0] = new_color[0]*3
+
+new_color_2 = initial_color[:]
+
+new_color_2[0] = new_color_2[0]*1.1
+
+print("\nHere is my initial color:")
+for value in initial_color:
+    print(f"\t{value}")
+
+
+print("\nHere is my new color with a red value brightened by a factor of 3:")
+for value in new_color:
+    print(f"\t{value}")
+
+
+print("\nHere is my new color with a red value brightened by a factor of 1.1")
+for value in new_color_2:
+    print(f"\t{value}")
+
+
+#   Photo Filter 4-6: Brightening Colors
+#   To make an individual pixel brighter, you need to increase the values of all
+#   three components. You can do this in a variety of ways.
+
+#   Start with a color you like. Make a new color by adding a set amount to each
+#   of the component values in your original color. Make a second new color by
+#   multiplying each of the component values by a certain amount. Print your
+#   original color, and your two new colors.
+
+dull_color = [2, 4, 6]
+print("\nHere is my original color:")
+for value in dull_color:
+    print(f"\t{value}")
+
+bright_color = [value + 10 for value in dull_color]
+print("\nHere is my brighter color, via adding a set amount to each component:")
+for value in bright_color:
+    print(f"\t{value}")
+
+print("\nHere is my brighter color (2), via multiplying each component value by"
+        " a set amount:")
+bright_color_2 = [value * 20 for value in dull_color]
+for value in bright_color_2:
+    print(f"\t{value}")
+
+
+
+
+
+
+
