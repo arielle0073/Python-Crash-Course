@@ -4,9 +4,9 @@
 
 def display_message(): 
     """Display one sentence about what I'm learning in this chapter"""
-    print("I am learning about functions, function calls, parameters and "
-            "arguments.")
-
+    message = "I am learning about functions, function calls, parameters and "
+    message+= "arguments."
+    print(message)
 
 display_message()
 
