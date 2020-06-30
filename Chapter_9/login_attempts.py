@@ -27,7 +27,6 @@ class User:
         print(f"Email address: {self.email_address}")
         print(f"Birthday: {self.birthday}")
 
-
     def greet_user(self): 
         """Print a personalized greeting to the user.""" 
         full_name = f"{self.first_name} {self.last_name}"
