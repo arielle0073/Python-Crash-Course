@@ -1,3 +1,3 @@
 # Python-Crash-Course
 
-Exercises from Matthes, Eric. Python Crash Course, 2nd Edition (p. 89). No Starch Press. Kindle Edition. 
+Exercises from Matthes, Eric. Python Crash Course, 2nd Edition. No Starch Press. Kindle Edition. 
